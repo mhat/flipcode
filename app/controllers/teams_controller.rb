@@ -19,4 +19,8 @@ class TeamsController < ApplicationController
     redirect_to current_team
   end
 
+  def current_text
+    pp params
+  end
+
 end

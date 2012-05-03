@@ -29,8 +29,8 @@ $(function () {
 
   setInterval(function () {
     $.ajax({
-	 	  url: '/teams/<%= current_team.id %>
-  	, data: { key: $solution.val() team_representation: 'not sure what this means?'}
+	 	  url: '/teams/<%= current_team.id.to_s %>'
+  	, data: { key: $solution.val(), team_representation: 'not sure what this means?'}
   	});
   }, 1000)
 });

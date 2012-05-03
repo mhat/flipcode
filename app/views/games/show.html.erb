@@ -57,6 +57,13 @@
   </div>
 <% else %>
   <div class="page-header">
-    <h1>THERE IS NO GAME</h1>
+    <% if Game.last_game %>
+      <h1><%= Game.last_game.winning_team %> WON THE LAST GAME</h1>
+    <% else %>
+      <h1>THERE IS NO GAME</h1>
+    <% end %>
   </div>
+  <% if Team.waiting %>
+    <h2><%= Team.waiting %> IS WAITING FOR A CHALLENGER</h2>
+  <% end %>
 <% end %>

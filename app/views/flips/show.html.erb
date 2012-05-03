@@ -24,15 +24,17 @@
   </div>
 </div>
 
-<code>
-def solve(input)<br/>
 <%= form_for(@flip, :url => solve_flip_url)  do |f| %>
-  <%= text_area_tag :solution, params[:solution], :size => "200x10" %></br>
-end                                                            
-</br></br>
-  <%= submit_tag 'Run my stupid code' %>
+  <p>
+    <code>def solve(input)</code>
+  </p>
+  <%= text_area_tag :solution, params[:solution], :size => "200x10" %>
+  <p>
+    <code>end</code>
+  </p>
+  <%= submit_tag 'Run my stupid code', :class => 'btn btn-primary' %>
 <% end %>
-</code>
+
 <script type="text/javascript">
 $(function () {
   var $solution = $('textarea');

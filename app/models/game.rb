@@ -23,4 +23,9 @@ class Game < ActiveRecord::Base
       flips.create(:name => flip.to_s)
     end
   end
+
+  def self.last_game
+    find(:first, :order => "created_at DESC")
+  end
+
 end

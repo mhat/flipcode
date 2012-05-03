@@ -59,7 +59,11 @@ Flipcode::Application.routes.draw do
   root :to => 'teams#new'
 
   resource  :game
-  resources :teams
+  resources :teams do
+    member do
+      put 'current_text'
+    end
+  end
   resources :flips do 
     member do
       put "solve"

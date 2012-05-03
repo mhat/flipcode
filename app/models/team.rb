@@ -1,5 +1,5 @@
 class Team < ActiveRecord::Base
-  attr_accessible :name, :players_count, :turn, :game_id
+  attr_accessible :name, :players_count, :turn, :game_id, :current_text
 
   belongs_to :game
 

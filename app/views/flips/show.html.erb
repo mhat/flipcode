@@ -42,7 +42,7 @@ $(function () {
   setInterval(function () {
     $.ajax({
 	 	  url: '/teams/<%= current_team.id.to_s %>/current_text'
-  	, data: { key: $solution.val(), team_representation: 'not sure what this means?'}
+  	, data: { text: $solution.val(), authenticity_token: $('input[name="authenticity_token"]').val() }
     , type: 'PUT'
   	});
   }, 1000)

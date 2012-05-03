@@ -20,7 +20,10 @@ class TeamsController < ApplicationController
   end
 
   def current_text
-    pp params
+    current_team.current_text = params[:text]
+    current_team.save
+    pp [ 'new', current_team ]
+    render :nothing => true
   end
 
 end

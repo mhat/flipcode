@@ -12,7 +12,7 @@
           <td><span class="bold">Sample Input</span></td><td><code><%= display_output(@flip.input) %></code></td>
         </tr>
         <tr>
-          <td><span class="bold">Sample Output</span></td><td><code><%= @flip.valid_output %></code></td>
+          <td><span class="bold">Sample Output</span></td><td><code><%= display_output @flip.valid_output %></code></td>
         </tr>
         <% if current_team.turn_attempts > 0 %>
           <tr>
@@ -28,7 +28,7 @@
   <p>
     <code>def solve(input)</code>
   </p>
-  <%= text_area_tag :solution, params[:solution], :size => "200x10" %>
+  <%= text_area_tag :solution, params[:solution], :style => "width:700px;height:200px" %></br>
   <p>
     <code>end</code>
   </p>

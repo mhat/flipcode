@@ -1,6 +1,6 @@
 class SumString < BaseFlip
 
-  desc "Assume a is worth 1, b is worth 2, etc. Case doesn't matter. Other characters are worth zero. Sum this person's name."
+  desc "Assume a=1, b=2...z=26. Case doesn't matter. Non-alpha characters are worth zero. Sum this person's name."
     
   def input_generator
     Faker::Name.first_name + ' ' + Faker::Name.last_name

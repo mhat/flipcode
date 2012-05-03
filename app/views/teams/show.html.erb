@@ -9,11 +9,12 @@
 <% if current_team.game %>
   <% if current_game.winning_team %>
     <% if current_game.winning_team == current_team %>
-      <h1>YOU WIN!</h1>
+      <h2>YOU WON</h2>
+      <%= link_to 'KEEP IT UP', new_team_path, :class => 'btn btn-primary' %>
     <% else %>
-      <h1>YOU LOSE!</h1>
+      <h2>YOU LOST</h2>
+      <%= link_to 'QUIT LOSING', new_team_path, :class => 'btn btn-primary' %>
     <% end %>
-    <%= link_to "START OVER!", new_team_path %>
   <% else %>
     <h4>FIGHTING AGAINST <%= current_team.opponent %></h4>
     <h4>PLAYER <%= current_team.turn %> IS UP</h4>

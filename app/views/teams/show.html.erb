@@ -14,11 +14,11 @@
     <%= link_to "START OVER!", new_team_path %>
   <% else %>
     <% if current_team.turn > 1 %>
-      <h1>CORRECT!</h1>
+      <h2>NEXT PLAYER</h2>
     <% end %>
-    <h2>FIGHTING AGAINST <%= current_team.opponent %></h2>
+    <h4>FIGHTING AGAINST <%= current_team.opponent %></h4>
     <h4>PLAYER <%= current_team.turn %> IS UP</h4>
-    <h4>FIRST YOU DRINK</h4>
+    <h2>FIRST YOU DRINK</h2>
     <h4><%= link_to 'THEN YOU FUCKING CLICK HERE', flip_path(current_team.flip), :class => 'btn btn-primary' %></h4>
   <% end %>
 <% else %>

@@ -1,19 +1,29 @@
-<h1>SOLVE THIS FUCKING PROBLEM</h1>
+<div class="page-header">
+  <h1>SOLVE THIS FUCKING PROBLEM</h1>
+</div>
 
-<p>
-  Name: <%= @flip.class %>
-  Description: <%= @flip.description %> </br>
-  Sample Input: <code><%= display_output(@flip.input) %></code> </br>
-  Sample Output: <code><%= @flip.valid_output %> </code></br>
-</p>
+<h3><%= @flip.description %></h3>
 
-<p>
-  <% if current_team.turn_attempts > 0 %>
-      Attempts: <%= current_team.turn_attempts %></br>
-      Output: <code><%= display_output(@flip.run_user_code(params[:solution]))%></code>
-    <% end %>
-</p>
-    
+<div class="row">
+  <div class="span6">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td><span class="bold">Sample Input</span></td><td><code><%= display_output(@flip.input) %></code></td>
+        </tr>
+        <tr>
+          <td><span class="bold">Sample Output</span></td><td><code><%= @flip.valid_output %></code></td>
+        </tr>
+        <% if current_team.turn_attempts > 0 %>
+          <tr>
+            <td><span class="bold">Your Output</span></td><td><code><%= display_output(@flip.run_user_code(params[:solution])) %></code></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <code>
 def solve(input)<br/>
 <%= form_for(@flip, :url => solve_flip_url)  do |f| %>

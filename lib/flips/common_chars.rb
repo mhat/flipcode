@@ -16,7 +16,7 @@ class CommonChars < BaseFlip
     end
     out = []
     chars.each do |char, count|
-      out << char
+      out << char if count == 2
     end
     return out
   end

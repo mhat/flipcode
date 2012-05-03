@@ -15,7 +15,6 @@ class TeamsController < ApplicationController
     if current_team.errors.empty?
       session[:team_id] = current_team.id
     end
-    flash[:notice] = "YES."
     redirect_to current_team
   end
 

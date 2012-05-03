@@ -3,7 +3,7 @@
 <%= form_for(Team.new, :html => { :class => 'well' }) do |f| %>
 
   <%= label_tag 'Name' %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :class => 'span3' %>
 
   <%= label_tag 'Size' %>
   <% if Team.waiting %>

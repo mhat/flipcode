@@ -9,11 +9,14 @@ class FlipsController < ApplicationController
     if @flip.solve(params[:solution])
       current_team.increment_turn
       if current_team.turn > current_team.players_count
-        #game over
+        # Game over.
         current_game.set_winner(current_team) unless current_game.winning_team
+      else
+        flash[:info] = 'CORRECT, NEXT PLAYER'
       end
       redirect_to(current_team)
     else
+      flash[:error] = 'NOPE'
       current_team.increment_turn_attempts
       redirect_to(flip_path(current_team.flip, {:solution => params[:solution]}))
     end

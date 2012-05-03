@@ -13,9 +13,6 @@
     <% end %>
     <%= link_to "START OVER!", new_team_path %>
   <% else %>
-    <% if current_team.turn > 1 %>
-      <h2>NEXT PLAYER</h2>
-    <% end %>
     <h4>FIGHTING AGAINST <%= current_team.opponent %></h4>
     <h4>PLAYER <%= current_team.turn %> IS UP</h4>
     <h2>FIRST YOU DRINK</h2>

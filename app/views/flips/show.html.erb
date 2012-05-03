@@ -7,15 +7,13 @@
   Sample Output: <code><%= @flip.valid_output %> </code></br>
 </p>
 
-<br/>
 <p>
   <% if current_team.turn_attempts > 0 %>
-    <h2>
-      FAIL! <br/>
       Attempts: <%= current_team.turn_attempts %></br>
       Output: <code><%= display_output(@flip.run_user_code(params[:solution]))%></code>
-    </h2>
-  <% end %>
+    <% end %>
+</p>
+    
 <code>
 def solve(input)<br/>
 <%= form_for(@flip, :url => solve_flip_url)  do |f| %>
@@ -25,8 +23,6 @@ end
   <%= submit_tag 'Run my stupid code' %>
 <% end %>
 </code>
-</p>
-<%# do something with @flip %
 <script type="text/javascript">
 $(function () {
   var $solution = $('textarea');

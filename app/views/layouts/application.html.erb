@@ -37,20 +37,18 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">FLIPCODE</a>
-          <!--
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">One</a></li>
-              <li><a href="#about">Two</a></li>
-              <li><a href="#contact">Three</a></li>
-            </ul>
-          </div>
-          -->
         </div>
       </div>
     </div>
 
     <div class="container">
+
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name %>">
+          <button class="close" data-dismiss="alert">×</button>
+          <%= msg %>
+        </div>
+      <% end %>
 
       <%= yield %>
 
